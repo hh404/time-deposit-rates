@@ -1,20 +1,41 @@
-<!-- app/templates/landing-page.hbs -->
-<div class="view-time-deposit-rates">
-  <h1>View Time Deposit Interest Rates</h1>
+<h1>Time Deposit Rates</h1>
 
-  <div>
-    <label for="currency">Which currency are you interested in?</label>
-    <CurrencySelector @selectedCurrency={{this.selectedCurrency}} @onCurrencyChange={{this.onCurrencyChange}} />
-  </div>
+<h2>New Fund Rates</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Tenor (Month)</th>
+      <th>Deposit Amount (HKD)</th>
+      <th>Interest Rates (p.a.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model.newFundRates as |rate|}}
+      <tr>
+        <td>{{rate.tenor}}</td>
+        <td>{{rate.amount}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 
-  <div class="tab-menu">
-    <button {{on "click" this.showNewFundRates}}>New Fund Interest Rates</button>
-    <button {{on "click" this.showExistingFundRates}}>Existing Fund Interest Rates</button>
-  </div>
-
-  {{#if this.showNewFund}}
-    <TimeDepositTable @data={{this.newFundRates}} />
-  {{else}}
-    <TimeDepositTable @data={{this.existingFundRates}} />
-  {{/if}}
-</div>
+<h2>Existing Fund Rates</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Tenor (Month)</th>
+      <th>Deposit Amount (HKD)</th>
+      <th>Interest Rates (p.a.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model.existingFundRates as |rate|}}
+      <tr>
+        <td>{{rate.tenor}}</td>
+        <td>{{rate.amount}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
