@@ -1,0 +1,42 @@
+{{yield}}
+
+{{! notwork }}
+{{!-- 
+<table>
+  <thead>
+    <tr>
+      <th>Tenor (Month)</th>
+      <th>Deposit Amount (HKD)</th>
+      <th>Interest Rates (p.a.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.data as |rate|}}
+      <tr>
+        <td>{{rate.tenor}}</td>
+        <td>{{rate.amount}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+--}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Tenor (Month)</th>
+      <th>Deposit Amount (HKD)</th>
+      <th>Interest Rates (p.a.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @data as |rate|}}
+      <tr>
+        <td>{{rate.tenor}}</td>
+        <td>{{rate.amount}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

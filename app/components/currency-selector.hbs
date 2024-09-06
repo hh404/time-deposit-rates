@@ -1,0 +1,5 @@
+{{yield}}
+<select id="currency" {{on "change" this.handleCurrencyChange}}>
+  <option value="HKD" selected={{eq this.selectedCurrency "HKD"}}>HKD</option>
+  <option value="USD" selected={{eq this.selectedCurrency "USD"}}>USD</option>
+</select>

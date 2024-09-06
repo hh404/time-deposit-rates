@@ -1,0 +1,22 @@
+{{page-title "LandingPage"}}
+{{outlet}}
+
+<div class="view-time-deposit-rates">
+  <h1>View Time Deposit Interest Rates</h1>
+
+  <div>
+    <label for="currency">Which currency are you interested in?</label>
+    <CurrencySelector @selectedCurrency={{this.selectedCurrency}} @onCurrencyChange={{this.onCurrencyChange}} />
+  </div>
+
+  <div class="tab-menu">
+    <button {{on "click" this.showNewFundRates}}>New Fund Interest Rates</button>
+    <button {{on "click" this.showExistingFundRates}}>Existing Fund Interest Rates</button>
+  </div>
+
+  {{#if this.showNewFund}}
+    <TimeDepositTable @data={{this.newFundRates}} />
+  {{else}}
+    <TimeDepositTable @data={{this.existingFundRates}} />
+  {{/if}}
+</div>

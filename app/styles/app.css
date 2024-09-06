@@ -1,1 +1,25 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+.view-time-deposit-rates {
+    margin: 20px;
+  }
+  
+  .tab-menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    text-align: left;
+  }
