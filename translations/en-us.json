@@ -1,0 +1,10 @@
+{
+    "timeDepositRates": {
+      "title": "Time Deposit Rates",
+      "newFundRates": "New Fund Rates",
+      "existingFundRates": "Existing Fund Rates",
+      "tenor": "Tenor (Month)",
+      "amount": "Deposit Amount (HKD)",
+      "rate": "Interest Rates (p.a.)"
+    }
+  }

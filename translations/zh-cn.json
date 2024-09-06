@@ -1,0 +1,10 @@
+{
+    "timeDepositRates": {
+      "title": "定期存款利率",
+      "newFundRates": "新资金利率",
+      "existingFundRates": "现有资金利率",
+      "tenor": "期限（月）",
+      "amount": "存款金额（港币）",
+      "rate": "年利率"
+    }
+  }
