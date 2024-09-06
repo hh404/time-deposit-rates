@@ -1,26 +1,12 @@
-
+// app/routes/landing-page.js
 import Route from '@ember/routing/route';
-import { action } from '@ember/object';
+import { fetchMockData } from '../utils/mock-api'; // 引入 mock API
 
 export default class LandingPageRoute extends Route {
-  model() {
-    return {
-      selectedCurrency: 'HKD',
-      newFundRates: [
-        { tenor: 1, amount: '100,000 to 499,999', rate: '7.125%' },
-        { tenor: 1, amount: '500,000 to 999,999', rate: '7.75%' },
-        { tenor: 1, amount: '1,000,000 to 1,999,999', rate: '7.75%' },
-        { tenor: 1, amount: '2,000,000 to 4,999,999', rate: '7.75%' },
-        { tenor: 1, amount: '5,000,000 to 20,000,000', rate: '7.75%' },
-        { tenor: 3, amount: '10,000 to 29,999', rate: '5.375%' },
-        // 更多数据...
-      ],
-      existingFundRates: [
-        { tenor: 1, amount: '100,000 to 499,999', rate: '5.125%' },
-        { tenor: 3, amount: '500,000 to 999,999', rate: '5.50%' },
-        // 更多数据...
-      ]
-    };
+  async model() {
+    // 模拟API请求并返回数据
+    const data = await fetchMockData();
+    return data;
   }
 
   setupController(controller, model) {
