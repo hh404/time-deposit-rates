@@ -1,4 +1,11 @@
 <h1>{{t 'timeDepositRates.title'}}</h1>
+{{log 'isAuthenticated' this.session.isAuthenticated}}
+{{log 'newFundRates' this.newFundRates}}
+{{#if this.session.isAuthenticated}}
+  <p>Welcome, {{this.session.username}}!</p>
+{{else}}
+  <p>Please log in to view the rates.</p>
+{{/if}}
 
 <h2>{{t 'timeDepositRates.newFundRates'}}</h2>
 <table>
@@ -39,3 +46,5 @@
     {{/each}}
   </tbody>
 </table>
+<button type="button" {{on "click" (fn this.changeLanguage 'en-us')}}>English</button>
+<button type="button" {{on "click" (fn this.changeLanguage 'zh-cn')}}>中文</button>

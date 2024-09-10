@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<form>
+  <div>
+    <label for="username">Username:</label>
+    <input id="username" type="text" value={{this.username}} oninput={{action (mut this.username) value="target.value"}}>
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" type="password" value={{this.password}} oninput={{action (mut this.password) value="target.value"}}>
+  </div>
+
+  <button type="button" {{on "click" this.login}}>Login</button>
+</form>
